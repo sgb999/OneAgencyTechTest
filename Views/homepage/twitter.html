@@ -1,0 +1,49 @@
+<script>
+  fetch('/Models/twitter.php').then(function (response) {
+    return response.text();
+  }).then(function (data) {
+    var myObj = JSON.parse(data);
+    console.log(myObj);
+    myObj.forEach(myFunction);
+  }).catch(function (error) {
+    console.log('Error: ' + error);
+  });
+  function myFunction(item){
+    var node = document.createTextNode(item.user.name);
+    createTag(node, 'p');
+    node = document.createTextNode('@' + item.user.screen_name);
+    link(node);
+    node = document.createTextNode(item.created_at.split(" ").slice(0,4).join(" "));
+    createTag(node, 'p');
+    node = document.createTextNode(item.text.replace(/ https(.*)/g, ""));
+    createTag(node, 'p');
+    line();
+  }
+  function link(node) {
+    //console.log(node);
+    para = document.createElement('p');
+    para.appendChild(node);
+    element = document.getElementById("twitterTarget");
+    var a = document.createElement('a');
+    a.appendChild(para);
+    a.href = "https://twitter.com/OneAgencyMedia/";
+    element.appendChild(a);
+  }
+  function createTag(node, tag){
+    para = document.createElement(tag);
+    para.appendChild(node);
+    element = document.getElementById("twitterTarget");
+    element.appendChild(para);
+  }
+  function line() {
+    para = document.createElement('hr');
+    element = document.getElementById('twitterTarget');
+    element.appendChild(para);
+  }
+</script>
+<div id="twitter">
+  <h1>Twitter Feed</h1>
+  <div id="twitterTarget">
+
+  </div>
+</div>

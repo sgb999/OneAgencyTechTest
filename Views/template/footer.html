@@ -1,0 +1,39 @@
+<!-- css -->
+<link href="/css/footer.css" rel="stylesheet">
+</body>
+<div id="footer">
+    <!--<p>© 2021 Copyright:</p>-->
+    <img src="../../Images/footer-logo.png" alt="footerLogo">
+    <div class="links">
+    <h2>Links</h2>
+    <a href="#">Example</a>
+    <a href="#">Example</a>
+    <a href="#">Example</a>
+    <a href="#">Example</a>
+    <a href="#">Example</a>
+    <a href="#">Example</a>
+    <a href="#">Example</a>
+    <a href="#">Example</a>
+    </div>
+    <div class="address">
+    <h2>Address</h2>
+        <p>Unit 14 Schoolhouse</p>
+        <p>Third Avenue</p>
+        <p>Trafford Park</p>
+        <p>Manchester, M17 1JE</p>
+    </div>
+    <div class="social">
+    <a href ="tel:01616946466">Call Manchester</a>
+    <a href ="tel:03304004169">Call London</a>
+    <a id="twitterSocial" href ="https://twitter.com/OneAgencyMedia/">Twitter</a>
+    </div>
+</div>
+<script>
+    var button = document.getElementById("hamburger");
+    button.addEventListener("click", (event) => {
+        var drop = document.querySelector(".dropdown")
+        event.preventDefault();
+        drop.classList.toggle("show");
+    });
+</script>
+</html>
