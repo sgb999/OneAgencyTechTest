@@ -8,7 +8,7 @@
     console.log('Error: ' + error);
   });
   function myFunction(item){
-    var node = document.createTextNode(item.user.name);
+    let node = document.createTextNode(item.user.name);
     createTag(node, 'p');
     node = document.createTextNode('@' + item.user.screen_name);
     link(node);
