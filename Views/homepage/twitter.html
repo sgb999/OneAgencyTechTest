@@ -2,9 +2,8 @@
   fetch('/Models/twitter.php').then(function (response) {
     return response.text();
   }).then(function (data) {
-    var myObj = JSON.parse(data);
-    console.log(myObj);
-    myObj.forEach(myFunction);
+    const myArr = JSON.parse(data);
+    myArr.forEach(myFunction);
   }).catch(function (error) {
     console.log('Error: ' + error);
   });
