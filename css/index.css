@@ -32,6 +32,9 @@ a:hover{
 a{
     text-decoration: none;
 }
+#section2Button {
+    color: white;
+}
 a.button {
     border-style: solid;
     border-color: black;
